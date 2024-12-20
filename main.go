@@ -11,18 +11,6 @@ import (
 	"github.com/infotrod/lenslocked/views"
 )
 
-type Course struct {
-	LanguageName string
-	Price        float64
-}
-type User struct {
-	Name             string
-	Email            string
-	SubscriptionEnds string
-	Courses          []Course
-	IsPrimaryMember  bool
-}
-
 func executeTemplate(w http.ResponseWriter, filepath string, data any) {
 	t, err := views.Parse(filepath)
 	if err != nil {
